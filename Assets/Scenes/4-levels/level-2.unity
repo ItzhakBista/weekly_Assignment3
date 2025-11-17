@@ -800,6 +800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 945324280}
   - component: {fileID: 945324279}
+  - component: {fileID: 945324281}
   m_Layer: 0
   m_Name: StarBackground
   m_TagString: Untagged
@@ -875,11 +876,26 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.4131, y: 0.1815, z: 1}
-  m_LocalScale: {x: 2.349328, y: 1.6237869, z: 0.9528718}
+  m_LocalScale: {x: 2, y: 5, z: 0.9528718}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &945324281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945324278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23e675e4ef84dd4cb2e1511e63aefeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingBackGround
+  speed: 1
+  resetY: -10
+  startY: 10
 --- !u!1 &1144032734
 GameObject:
   m_ObjectHideFlags: 0

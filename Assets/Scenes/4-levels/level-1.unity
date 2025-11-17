@@ -917,8 +917,8 @@ Transform:
   m_GameObject: {fileID: 751828109}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4131, y: 0.1815, z: 1}
-  m_LocalScale: {x: 2.7894592, y: 1.9279928, z: 1.1313862}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 5, z: 1.1313862}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -936,8 +936,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 1
-  resetY: -20
-  startY: 20
+  resetY: -10
+  startY: 10
 --- !u!1 &1062366944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8935677741341602930, guid: 4b67b5f8d0d10fb44ac26d297d56a8e7,
@@ -1141,7 +1141,7 @@ PrefabInstance:
     - target: {fileID: 3018108657062391778, guid: 41e5c0266515f1c49aec825f2068a297,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3896440064613542801, guid: 41e5c0266515f1c49aec825f2068a297,
         type: 3}
@@ -1282,6 +1282,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1604446143}
+    - targetCorrespondingSourceObject: {fileID: 3896440064613542801, guid: 41e5c0266515f1c49aec825f2068a297,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1604446152}
   m_SourcePrefab: {fileID: 100100000, guid: 41e5c0266515f1c49aec825f2068a297, type: 3}
 --- !u!1 &1604446122 stripped
 GameObject:
@@ -1308,7 +1312,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604446122}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24cd8fbea89778946aace769a962b58c, type: 3}
   m_Name: 
@@ -1341,6 +1345,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd9aa4071f1b124c9760bc4002653fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionWithWall
+--- !u!114 &1604446152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604446122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bec66784a9f5cc45b4717e7cd91118a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  HealthBar: 5
 --- !u!1 &1811610584
 GameObject:
   m_ObjectHideFlags: 0

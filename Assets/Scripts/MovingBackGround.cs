@@ -3,8 +3,8 @@ using UnityEngine;
 public class MovingBackGround : MonoBehaviour
 {
     public float speed = 1f;
-    public float resetY = -20f;
-    public float startY = 20f;
+    public float resetY = -10f;
+    public float startY = 10f;
 
     // Update is called once per frame
     void Update()
