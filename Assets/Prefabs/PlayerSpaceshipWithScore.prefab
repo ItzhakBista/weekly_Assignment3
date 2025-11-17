@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523b3d4932836264caa53ada165578a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 0
 --- !u!1 &3896440064613542801
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggeringTag: Enemy
+  Health: 0
 --- !u!114 &5043964463970077360
 MonoBehaviour:
   m_ObjectHideFlags: 0

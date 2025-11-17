@@ -6,7 +6,7 @@ using UnityEngine;
  * It allows to feed an integer number to the text field.
  */
 public class NumberField : MonoBehaviour {
-    private int number;
+    public int number;
 
     public int GetNumber() {
         return this.number;
