@@ -13,5 +13,6 @@ public class GotoNextLevel : MonoBehaviour {
             this.transform.position = Vector3.zero;
             SceneManager.LoadScene(sceneName);    // Input can either be a serial number or a name; here we use name.
         }
+        
     }
 }

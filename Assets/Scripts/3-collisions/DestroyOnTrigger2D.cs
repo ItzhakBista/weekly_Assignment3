@@ -14,13 +14,18 @@ public class DestroyOnTrigger2D : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == triggeringTag && enabled) {
+            if(tag == "Player"){
+                PlayerStats.Instance.TakeDamage(1f);
+            }
             if (Health <= 0){
                 Destroy(this.gameObject);
             }
             else
             {
                 Health--;
+                Debug.Log(tag + " Lives amount: " + Health);
             }
+
             Destroy(other.gameObject);
             onHit?.Invoke();
         }
@@ -29,5 +34,6 @@ public class DestroyOnTrigger2D : MonoBehaviour {
 
     private void Update() {
         /* Just to show the enabled checkbox in Editor */
+        
     }
 }
