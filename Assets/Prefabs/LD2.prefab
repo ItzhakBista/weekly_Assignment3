@@ -353,7 +353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b571bdbf83e603449e50749327e251f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyOnTrigger2D
-  triggeringTag: Enemy
+  triggeringTag: Player
+  Health: 0
 --- !u!23 &8664971578466829745
 MeshRenderer:
   m_ObjectHideFlags: 0

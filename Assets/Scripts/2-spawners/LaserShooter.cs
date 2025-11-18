@@ -11,15 +11,37 @@ public class LaserShooter : ClickSpawner
     [SerializeField]
     [Tooltip("How many points to add to the shooter, if the laser hits its target")]
     int pointsToAdd = 1;
+    [SerializeField] bool autoShoot = false;
+    [SerializeField] float secondsBetweenShots = 2f;
     // A reference to the field that holds the score that has to be updated when the laser hits its target.
     private NumberField scoreField;
-
+    float shootTimer = 0f;
 
     void Awake()
     {
         if (scoreField == null)
         {
             scoreField = FindFirstObjectByType<NumberField>();
+        }
+    }
+
+    void Update()
+    {
+        if (autoShoot)
+        {
+            shootTimer += Time.deltaTime;
+
+            if (shootTimer >= secondsBetweenShots)
+            {
+                shootTimer = 0f;
+                spawnObject();
+            }
+            return;
+        }
+
+        if (spawnAction.WasPressedThisFrame())
+        {
+            spawnObject();
         }
     }
 

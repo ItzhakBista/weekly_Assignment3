@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -8433250894850022944}
   - component: {fileID: 1314305969971964113}
   - component: {fileID: 4383555931077428505}
+  - component: {fileID: -3647166171931978998}
   m_Layer: 0
   m_Name: LaserDestroyer
   m_TagString: Laser
@@ -184,8 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyOnTrigger2D
   triggeringTag: Enemy
-  explosionPrefab: {fileID: 3702631383622039973, guid: fbbda809d59774e4cbd37c5c2341e9a8,
-    type: 3}
+  Health: 0
 --- !u!114 &4383555931077428505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,3 +198,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01d403925b3d924ea5f7eb73634d4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionLogger
+--- !u!114 &-3647166171931978998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206225842732292031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b571bdbf83e603449e50749327e251f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyOnTrigger2D
+  triggeringTag: Boss
+  Health: 0

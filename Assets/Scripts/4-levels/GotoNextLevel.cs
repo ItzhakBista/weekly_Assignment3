@@ -1,22 +1,39 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GotoNextLevel : MonoBehaviour {
-    [SerializeField] string triggeringTag;
-    [SerializeField] [Tooltip("Name of scene to move to when triggering the given tag")] string sceneName;
-    
-    private void OnTriggerEnter2D(Collider2D other) {
-        DestroyOnTrigger2D trigger = GetComponent<DestroyOnTrigger2D>();
-        if (other.tag == triggeringTag && trigger.Health <= 0) {
-            Debug.Log("Moving " + this + " to zero");
-            this.transform.position = Vector3.zero;
-            SceneManager.LoadScene(sceneName);    // Input can either be a serial number or a name; here we use name.
-        }
-        else if(other.tag == triggeringTag && trigger.Health > 0 && sceneName != "level-game-over")
+public class GotoNextLevel : MonoBehaviour
+{
+    [SerializeField] int sceneIndex;
+    [SerializeField] int pointsToNextLevel;
+    [SerializeField] GameObject scoreObject;
+
+    PlayerStats playerStats;
+    int score;
+    int currentScene;
+    [SerializeField] bool isTransitioning = false;
+
+    void Start()
+    {
+        playerStats = PlayerStats.Instance;
+
+        if (playerStats == null)
+            Debug.LogError("GotoNextLevel: PlayerStats.Instance not found");
+    }
+
+    void Update()
+    {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        score = scoreObject.GetComponentInChildren<NumberField>().number;
+
+        if (playerStats.Health <= 0 && sceneIndex > currentScene && pointsToNextLevel == 0)
         {
-            Debug.Log("Moving " + this + " to zero");
-            this.transform.position = Vector3.zero;
-            SceneManager.LoadScene(sceneName); 
+            SceneManager.LoadScene(sceneIndex);
+            return;
+        }
+
+        if (score >= pointsToNextLevel && isTransitioning && sceneIndex > currentScene)
+        {
+            SceneManager.LoadScene(sceneIndex);
         }
     }
 }
