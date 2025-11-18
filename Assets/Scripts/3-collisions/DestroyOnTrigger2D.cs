@@ -16,13 +16,13 @@ public class DestroyOnTrigger2D : MonoBehaviour {
         if (other.tag == triggeringTag && enabled) {
             if(tag == "Player"){
                 PlayerStats.Instance.TakeDamage(1f);
+                Health--;
             }
             if (Health <= 0){
                 Destroy(this.gameObject);
             }
             else
             {
-                Health--;
                 Debug.Log(tag + " Lives amount: " + Health);
             }
 

@@ -7,17 +7,18 @@ public class GotoNextLevel : MonoBehaviour
     [SerializeField] int pointsToNextLevel;
     [SerializeField] GameObject scoreObject;
 
-    PlayerStats playerStats;
     int score;
     int currentScene;
     [SerializeField] bool isTransitioning = false;
 
-    void Start()
-    {
-        playerStats = PlayerStats.Instance;
 
-        if (playerStats == null)
-            Debug.LogError("GotoNextLevel: PlayerStats.Instance not found");
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (PlayerStats.Instance.Health <= 0 && !isTransitioning)
+        {
+            SceneManager.LoadScene(sceneIndex);
+            return;
+        }
     }
 
     void Update()
@@ -25,14 +26,9 @@ public class GotoNextLevel : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().buildIndex;
         score = scoreObject.GetComponentInChildren<NumberField>().number;
 
-        if (playerStats.Health <= 0 && sceneIndex > currentScene && pointsToNextLevel == 0)
-        {
-            SceneManager.LoadScene(sceneIndex);
-            return;
-        }
-
         if (score >= pointsToNextLevel && isTransitioning && sceneIndex > currentScene)
         {
+            Debug.LogWarning("Going to Level: "+ sceneIndex);
             SceneManager.LoadScene(sceneIndex);
         }
     }
