@@ -21,5 +21,5 @@ public class playerScore : MonoBehaviour
     {
         SetNumber(this.number + toAdd);
     }
-    
+
 }

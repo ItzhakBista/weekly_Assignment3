@@ -28,7 +28,7 @@ public class GotoNextLevel : MonoBehaviour
 
         if (score >= pointsToNextLevel && isTransitioning && sceneIndex > currentScene)
         {
-            Debug.LogWarning("Going to Level: "+ sceneIndex);
+            Debug.LogWarning("Going to Level: " + sceneIndex);
             SceneManager.LoadScene(sceneIndex);
         }
     }

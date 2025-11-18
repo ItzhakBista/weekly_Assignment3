@@ -10,18 +10,18 @@ public class CollisionWithWall : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("UpperWall"))
+        if (other.gameObject.CompareTag("UpperWall"))
         {
             Debug.Log("Collision with wall");
             transform.position = new Vector3(transform.position.x, UpperBoundary, 0);
@@ -43,6 +43,6 @@ public class CollisionWithWall : MonoBehaviour
         }
     }
 
-    
+
 
 }
