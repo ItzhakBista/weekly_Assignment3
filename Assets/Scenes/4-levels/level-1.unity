@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GotoNextLevel
   sceneIndex: 3
-  pointsToNextLevel: 10
+  pointsToNextLevel: 50
   scoreObject: {fileID: 10256212}
   isTransitioning: 1
 --- !u!1 &552903276
@@ -1937,7 +1937,7 @@ PrefabInstance:
     - target: {fileID: 4184894171330074521, guid: 0b2d7e999e2790e48b5b1299c1b9cf32,
         type: 3}
       propertyPath: pointsToNextLevel
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8929030807897482623, guid: 0b2d7e999e2790e48b5b1299c1b9cf32,
         type: 3}
